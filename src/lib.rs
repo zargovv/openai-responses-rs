@@ -6,7 +6,7 @@ use reqwest::{
     Client as Http, StatusCode,
     header::{self, HeaderMap, HeaderValue},
 };
-use serde_json::json;
+use serde_json::{Value, json};
 use std::env;
 use types::{Error, Include, InputItemList, Request, Response, ResponseResult};
 #[cfg(feature = "stream")]
@@ -93,7 +93,7 @@ impl Client {
     pub async fn create(
         &self,
         mut request: Request,
-    ) -> Result<Result<Response, Error>, reqwest::Error> {
+    ) -> Result<Value, reqwest::Error> {
         // Use the `stream` function to stream the response.
         request.stream = Some(false);
 
@@ -108,7 +108,7 @@ impl Client {
             response = response.error_for_status()?;
         }
 
-        response.json::<ResponseResult>().await.map(Into::into)
+        response.json::<serde_json::Value>().await
     }
 
     #[cfg(feature = "stream")]
