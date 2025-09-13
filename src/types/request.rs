@@ -84,7 +84,7 @@ impl Default for Request {
             temperature: None,
             instructions: None,
             service_tier: None,
-            model: Model::GPT4o,
+            model: Model::Gpt4o,
             max_output_tokens: None,
             parallel_tool_calls: None,
             previous_response_id: None,

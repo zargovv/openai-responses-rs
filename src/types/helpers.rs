@@ -49,15 +49,19 @@ impl From<String> for Model {
     fn from(s: String) -> Self {
         match s.as_str() {
             "o1" => Self::o1,
-            "gpt-4" => Self::GPT4,
-            "gpt-4o" => Self::GPT4o,
+            "gpt-4" => Self::Gpt4,
+            "gpt-4o" => Self::Gpt4o,
             "o1-mini" => Self::o1Mini,
             "o3-mini" => Self::o3Mini,
-            "gpt-4o-mini" => Self::GPT4oMini,
-            "gpt-4o-turbo" => Self::GPT4Turbo,
-            "gpt-3.5-turbo" => Self::GPT3_5Turbo,
-            "gpt-4.5-preview" => Self::GPT4_5Preview,
+            "gpt-4o-mini" => Self::Gpt4oMini,
+            "gpt-4o-turbo" => Self::Gpt4Turbo,
+            "gpt-3.5-turbo" => Self::Gpt3_5Turbo,
+            "gpt-4.5-preview" => Self::Gpt4_5Preview,
             "computer-use-preview" => Self::ComputerUsePreview,
+            "gpt-4.1" => Self::Gpt4_1,
+            "gpt-5-nano" => Self::Gpt5Nano,
+            "gpt-5-mini" => Self::Gpt5Mini,
+            "gpt-5" => Self::Gpt5,
             _ => Self::Other(s),
         }
     }

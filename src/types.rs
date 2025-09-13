@@ -40,6 +40,14 @@ pub enum Model {
     Gpt3_5Turbo,
     #[serde(rename = "computer-use-preview")]
     ComputerUsePreview,
+    #[serde(rename = "gpt-4.1")]
+    Gpt4_1,
+    #[serde(rename = "gpt-5-nano")]
+    Gpt5Nano,
+    #[serde(rename = "gpt-5-mini")]
+    Gpt5Mini,
+    #[serde(rename = "gpt-5")]
+    Gpt5,
     #[serde(untagged)]
     Other(String),
 }
