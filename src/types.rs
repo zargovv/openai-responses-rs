@@ -27,17 +27,17 @@ pub enum Model {
     #[serde(rename = "o3-mini")]
     o3Mini,
     #[serde(rename = "gpt-4.5-preview")]
-    GPT4_5Preview,
+    Gpt4_5Preview,
     #[serde(rename = "gpt-4o")]
-    GPT4o,
+    Gpt4o,
     #[serde(rename = "gpt-4o-mini")]
-    GPT4oMini,
+    Gpt4oMini,
     #[serde(rename = "gpt-4o-turbo")]
-    GPT4Turbo,
+    Gpt4Turbo,
     #[serde(rename = "gpt-4")]
-    GPT4,
+    Gpt4,
     #[serde(rename = "gpt-3.5-turbo")]
-    GPT3_5Turbo,
+    Gpt3_5Turbo,
     #[serde(rename = "computer-use-preview")]
     ComputerUsePreview,
     #[serde(untagged)]
