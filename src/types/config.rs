@@ -65,6 +65,7 @@ pub struct ReasoningConfig {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(rename_all = "lowercase")]
 pub enum ReasoningEffort {
+    Minimal,
     Low,
     High,
     Medium,
