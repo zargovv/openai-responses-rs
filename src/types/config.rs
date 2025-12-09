@@ -56,7 +56,11 @@ pub struct ReasoningConfig {
     /// Constrains effort on reasoning for [reasoning models](https://platform.openai.com/docs/guides/reasoning). Reducing reasoning effort can result in faster responses and fewer tokens used on reasoning in a response.
     pub effort: Option<ReasoningEffort>,
     /// A summary of the reasoning performed by the model. This can be useful for debugging and understanding the model's reasoning process.
+    #[deprecated(note = "use `summary` instead.")]
     pub generate_summary: Option<SummaryConfig>,
+    /// A summary of the reasoning performed by the model. This can be useful for debugging and
+    /// understanding the model's reasoning process.
+    pub summary: Option<SummaryConfig>,
 }
 
 /// Constrains effort on reasoning for [reasoning models](https://platform.openai.com/docs/guides/reasoning).
@@ -67,14 +71,15 @@ pub struct ReasoningConfig {
 pub enum ReasoningEffort {
     Minimal,
     Low,
-    High,
     Medium,
+    High,
 }
 
 /// A summary of the reasoning performed by the model. This can be useful for debugging and understanding the model's reasoning process.
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(rename_all = "lowercase")]
 pub enum SummaryConfig {
+    Auto,
     Concise,
     Detailed,
 }
